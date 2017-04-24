@@ -1,0 +1,41 @@
+@keyframes facing-left {
+  0% {
+    transform: rotateY(0deg);
+  }
+  80% {
+    transform: rotateY(60deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+@keyframes facing-right {
+  0% {
+    transform: rotateY(180deg);
+  }
+  80% {
+    transform: rotateY(120deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+#canvas {
+  position: relative;
+}
+
+#canvas canvas {
+  position: absolute;
+}
+
+canvas.face-left {
+  animation-name: facing-left;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+canvas.face-left.face-right {
+  animation-name: facing-right;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
